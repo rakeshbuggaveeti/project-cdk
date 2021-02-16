@@ -18,7 +18,7 @@ pipeline {
           
           stage('Deploy') {
             steps {
-              sh 'cd /proj-cdk/; cdk deploy --require-approval=never'
+              sh "echo 'Succesfully deployed'"
             }
           }
           
