@@ -1,11 +1,13 @@
-FROM adam9098/aws-cdk:latest
+FROM python:3.7.4-alpine3.10
 
 WORKDIR /proj-cdk/
 COPY . .
 
-RUN \
-  -v $(pwd):/cdk -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN \
-  -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
-  -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
-  -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
-  -ti adam9098/aws-cdk:v1.10.0 diff
+RUN pip install --upgrade pip;\
+    pip install --upgrade awscli;
+
+RUN set -e;\
+    apk add --no-cache nodejs git=2.22.0-r0 openssh=8.0_p1-r0;\
+    apk add --no-cache npm;\
+    npm c set unsafe-perm true;\
+    npm i -g aws-cdk@1.3.0;\
