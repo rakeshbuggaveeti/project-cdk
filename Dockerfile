@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:10.23.3-stretch-slim
 
 WORKDIR /proj-cdk/
 COPY . .
