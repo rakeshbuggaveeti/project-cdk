@@ -18,11 +18,11 @@ pipeline {
           
           stage('Deploy') {
             steps {
-              sh "echo 'Succesfully deployed'"
+              sh 'cdk deploy --require-approval=never'
             }
           }
-          
 
+          
     }
     
     post {
