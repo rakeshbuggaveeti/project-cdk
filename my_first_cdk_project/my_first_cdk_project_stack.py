@@ -22,7 +22,7 @@ class MyFirstCdkProjectStack(core.Stack):
             self,
             "mybucketoutput",
             value=mybucket.bucket_name,
-            description="This is my first CDK bucket",
+            description="This is my first CDK bucket !!!!",
             export_name="mybucketoutput"
 
         )
