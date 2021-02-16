@@ -18,10 +18,10 @@ pipeline {
           
           stage('Deploy') {
             steps {
-              sh 'cdk deploy --require-approval=never'
+              sh ' docker run CDK-IMG cdk deploy --require-approval=never'
             }
           }
-
+          
 
     }
     
