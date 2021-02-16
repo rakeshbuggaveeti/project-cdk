@@ -15,22 +15,14 @@ pipeline {
         withCredentials(awsCredentials)
     }
     stages {
-          stage('Build') {
-            steps {
-              git 'clone https://github.com/rakeshbuggaveeti/project-cdk.git'
-            }
-          }
+          
           stage('Deploy') {
             steps {
               sh 'cdk deploy --require-approval=never'
             }
           }
 
-          stage('Destroy') {
-            steps {
-              sh 'cdk destroy --require-approval=never'
-            }
-          }
+
     }
     
     post {
