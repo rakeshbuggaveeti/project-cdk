@@ -18,7 +18,7 @@ pipeline {
           
           stage('Deploy') {
             steps {
-              docker 'run $IMAGE_ID cdk deploy --require-approval=never'
+              cdk 'deploy --require-approval=never'
             }
           }
           
