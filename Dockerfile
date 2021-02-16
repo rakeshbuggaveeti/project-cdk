@@ -10,7 +10,7 @@ RUN pip install --upgrade pip;\
 
 
 
-RUN apk add --no-cache nodejs git=2.22.4-r0 openssh=8.1_p1-r0;\
+RUN apk add --no-cache nodejs;\
     apk add --no-cache npm;\
     npm c set unsafe-perm true;\
     npm i -g aws-cdk@1.3.0;\;
