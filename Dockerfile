@@ -3,6 +3,8 @@ FROM python:3.7.4-alpine3.10
 WORKDIR /proj-cdk/
 COPY . .
 
+RUN python -m pip install -r requirements.txt
+
 RUN pip install --upgrade pip;\
     pip install --upgrade awscli;
 
